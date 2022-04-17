@@ -11,8 +11,42 @@ function computerPlay(){
 	return result
 }
 
-let PlayerChoice = prompt("Enter your choice", "")
+loop:
+while(true){
+    var playerChoice = prompt("Enter your choice? (Rock, Paper, Scissors)"); 
+    playerChoice = playerChoice[0].toUpperCase() + playerChoice.slice(1,playerChoice.length).toLowerCase()
+    switch (playerChoice) {
+        case "Rock": 
+            field = "Field 1";
+            break loop;
+        case "Paper": 
+            field = "Field 2";
+            break loop;
+        case "Scissors":
+            field = "Field 3";
+            break loop;
+        default: alert("Please enter a valid sport");
+    }
+}
 
+console.log(playerChoice)
 
+function decideWinner(one,two) {
+	if (one === "Paper" && two ==="Scissors") {
+		return "Computer played " + one + ". Player played " + two + ". Player wins."
+	} else if (one === "Paper" && two === "Rock"){
+		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+	} else if (one === "Scissors" && two === "Paper") {
+		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+	} else if (one === "Scissors" && two === "Rock") {
+		return "Computer played " + one + ". Player played " + two + ". Player wins."
+	} else if (one === "Rock" && two === "Paper") {
+		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+	} else if (one === "Rock" && two === "Scissors") {
+		return "Computer played " + one + ". Player played " + two + ". Player wins."
+	} else if (one === two) {
+		return "Computer played " + one + ". Player played " + two + ". Result is a draw."
+	}
+}
 
-console.log(computerPlay())
+console.log(decideWinner(computerPlay(), playerChoice))
