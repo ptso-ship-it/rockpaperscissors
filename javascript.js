@@ -11,25 +11,6 @@ function computerPlay(){
 	return result
 }
 
-loop:
-while(true){
-    var playerChoice = prompt("Enter your choice? (Rock, Paper, Scissors)"); 
-    playerChoice = playerChoice[0].toUpperCase() + playerChoice.slice(1,playerChoice.length).toLowerCase()
-    switch (playerChoice) {
-        case "Rock": 
-            field = "Field 1";
-            break loop;
-        case "Paper": 
-            field = "Field 2";
-            break loop;
-        case "Scissors":
-            field = "Field 3";
-            break loop;
-        default: alert("Please enter a valid sport");
-    }
-}
-
-console.log(playerChoice)
 
 function decideWinner(one,two) {
 	if (one === "Paper" && two ==="Scissors") {
@@ -49,4 +30,28 @@ function decideWinner(one,two) {
 	}
 }
 
-console.log(decideWinner(computerPlay(), playerChoice))
+function game() {
+	for (let i = 0; i < 5; i++) {
+		loop:
+			while(true){
+			    var playerChoice = prompt("Enter your choice? (Rock, Paper, Scissors)"); 
+			    playerChoice = playerChoice[0].toUpperCase() + playerChoice.slice(1,playerChoice.length).toLowerCase()
+			    switch (playerChoice) {
+			        case "Rock": 
+			            field = "Field 1";
+			            break loop;
+			        case "Paper": 
+			            field = "Field 2";
+			            break loop;
+			        case "Scissors":
+			            field = "Field 3";
+			            break loop;
+        default: alert("Please enter a valid sport");
+    }
+}
+		console.log(decideWinner(computerPlay(), playerChoice));
+	}
+}
+
+game()
+
