@@ -12,25 +12,35 @@ function computerPlay(){
 }
 
 
-function decideWinner(one,two) {
+function playRound(one,two) {
 	if (one === "Paper" && two ==="Scissors") {
 		return "Computer played " + one + ". Player played " + two + ". Player wins."
-	} else if (one === "Paper" && two === "Rock"){
+	} else if (one === "Paper" && two === "Rock") {
 		return "Computer played " + one + ". Player played " + two + ". Computer wins."
 	} else if (one === "Scissors" && two === "Paper") {
 		return "Computer played " + one + ". Player played " + two + ". Computer wins."
 	} else if (one === "Scissors" && two === "Rock") {
 		return "Computer played " + one + ". Player played " + two + ". Player wins."
 	} else if (one === "Rock" && two === "Paper") {
-		return "Computer played " + one + ". Player played " + two + ". Computer wins."
-	} else if (one === "Rock" && two === "Scissors") {
 		return "Computer played " + one + ". Player played " + two + ". Player wins."
+	} else if (one === "Rock" && two === "Scissors") {
+		return "Computer played " + one + ". Player played " + two + ". Computer wins."
 	} else if (one === two) {
 		return "Computer played " + one + ". Player played " + two + ". Result is a draw."
 	}
+
 }
 
-function game() {
+
+
+//document.getElementById("Rock").onclick = console.log(playRound(computerPlay(),"Rock"))
+
+//console.log(playRound(computerPlay,playerPlay))
+
+
+
+
+/* function game() {
 	for (let i = 0; i < 5; i++) {
 		loop:
 			while(true){
@@ -54,4 +64,5 @@ function game() {
 }
 
 game()
+*/
 
