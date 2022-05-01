@@ -11,26 +11,66 @@ function computerPlay(){
 	return result
 }
 
+const container = document.querySelector("#container")
+
+let i = 0;
+
+let playerWin = 0;
+let computerWin = 0;
 
 function playRound(one,two) {
+	let result = "test"
 	if (one === "Paper" && two ==="Scissors") {
-		return "Computer played " + one + ". Player played " + two + ". Player wins."
+		result  = "Computer played " + one + ". Player played " + two + ". Player wins."
+		playerWin++
 	} else if (one === "Paper" && two === "Rock") {
-		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+		result  =  "Computer played " + one + ". Player played " + two + ". Computer wins."
+		computerWin++
 	} else if (one === "Scissors" && two === "Paper") {
-		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+		result  =  "Computer played " + one + ". Player played " + two + ". Computer wins."
+		computerWin++
 	} else if (one === "Scissors" && two === "Rock") {
-		return "Computer played " + one + ". Player played " + two + ". Player wins."
+		result  =  "Computer played " + one + ". Player played " + two + ". Player wins."
+		playerWin++
 	} else if (one === "Rock" && two === "Paper") {
-		return "Computer played " + one + ". Player played " + two + ". Player wins."
+		result  =  "Computer played " + one + ". Player played " + two + ". Player wins."
+		playerWin++
 	} else if (one === "Rock" && two === "Scissors") {
-		return "Computer played " + one + ". Player played " + two + ". Computer wins."
+		result  =  "Computer played " + one + ". Player played " + two + ". Computer wins."
+		computerWin++
 	} else if (one === two) {
-		return "Computer played " + one + ". Player played " + two + ". Result is a draw."
+		result  =  "Computer played " + one + ". Player played " + two + ". Result is a draw."
 	}
-
+	console.log([one, two, result])
+	const display = document.createElement("div");
+	display.textContent = result;
+	container.appendChild(display);
+	i++
+	return i
 }
 
+function counter(round) {
+	if (round % 5 === 0) {
+		const stoppage = document.createElement("div");
+		if (playerWin > computerWin) {
+			stoppage.textContent = "Player wins by a score of: " + playerWin + 
+			" to: " + computerWin;
+			container.appendChild(stoppage);
+			playerWin = 0;
+			computerWin = 0;
+		} else if (playerWin === computerWin) {
+			stoppage.textContent = "There's a draw. Both players scored: " + computerWin;
+			container.appendChild(stoppage);
+			playerWin = 0;
+			computerWin = 0;
+		} else {
+			stoppage.textContent = "Computer wins by a score of: " + computerWin + " to: " + playerWin;
+			container.appendChild(stoppage);
+			playerWin = 0;
+			computerWin = 0;
+		}
+	}
+}
 
 
 //document.getElementById("Rock").onclick = console.log(playRound(computerPlay(),"Rock"))

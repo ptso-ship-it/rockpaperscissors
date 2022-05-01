@@ -8,10 +8,12 @@
   </head>
 
   <body>
-    <button id="Rock" onclick = "console.log(playRound(computerPlay(),this.id))">Rock</button>
-    <button id="Paper" onclick= "console.log(playRound(computerPlay(),this.id))">Paper</button>
-    <button id="Scissors" onclick="console.log(playRound(computerPlay(),this.id))">Scissors</button>
-    <script src="javascript.js"></script>
+    
+    <button id="Rock" onclick = "counter(playRound(computerPlay(),this.id))">Rock</button>
+    <button id="Paper" onclick = "counter(playRound(computerPlay(),this.id))">Paper</button>
+    <button id="Scissors" onclick ="counter(playRound(computerPlay(),this.id))">Scissors</button>
+    <script src="javascript.js" defer></script>
 
-    <div id="Result">The result is:</div>
+    <div id="container">The result is:</div>
+
   </body>
